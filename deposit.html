@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deposit — Tigerès Logs</title>
+  <meta name="description" content="Add balance to your Tigerès Logs account with SOL, ETH or BTC." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F07A28'/%3E%3Cpath d='M0 18h64M0 32h64M0 46h64' stroke='%23181410' stroke-width='7'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Sora:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="deposit.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-head">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-word">TIGERÈS<b>LOGS</b></span>
+    </a>
+    <div class="head-right">
+      <a class="balance-chip" href="/deposit" title="Your balance">
+        <span class="chip-dot" aria-hidden="true"></span>
+        <span id="balance-amount">$0.00</span>
+      </a>
+      <a class="btn btn-solid head-cta" href="/">Back to store</a>
+    </div>
+  </header>
+
+  <main class="deposit-main">
+    <div class="deposit-shell">
+      <section class="dep-panel" id="dep-config">
+        <p class="eyebrow">Top up your vault</p>
+        <h1 class="dep-title">Deposit</h1>
+        <p class="dep-sub">Pick an amount, choose your coin, send the exact amount shown. Your balance is credited as soon as the payment is verified.</p>
+        <div class="dep-notice">
+          <b>Minimum deposit: $10.</b> Anything under $10 can't be processed — presets start right at the minimum.
+        </div>
+        <div class="dep-notice notice-warn">
+          <b>Payment not credited automatically?</b> If your balance doesn't update after your payment clears, DM the owner and/or staff in the Telegram group and they'll sort it manually.
+        </div>
+
+        <div class="dep-step">
+          <span class="step-label">1 · Choose an amount</span>
+          <div class="preset-row" role="group" aria-label="Deposit amount presets">
+            <button class="preset" data-usd="10">$10</button>
+            <button class="preset" data-usd="15">$15</button>
+            <button class="preset" data-usd="20">$20</button>
+            <button class="preset" data-usd="25">$25</button>
+            <button class="preset" data-usd="30">$30</button>
+            <button class="preset preset-custom" id="preset-custom" data-usd="custom">Custom</button>
+          </div>
+          <div class="custom-wrap" id="custom-wrap" hidden>
+            <label class="custom-label" for="custom-usd">Custom amount (USD)</label>
+            <div class="usd-input-wrap">
+              <span class="usd-sign">$</span>
+              <input id="custom-usd" type="number" min="10" max="10000" step="1" inputmode="decimal" placeholder="50" />
+            </div>
+            <p class="field-hint" id="custom-hint">Between $10 and $10,000.</p>
+          </div>
+        </div>
+
+        <div class="dep-step">
+          <span class="step-label">2 · Choose your coin</span>
+          <div class="coin-row" role="group" aria-label="Payment coin">
+            <button class="coin-card" data-coin="sol">
+              <span class="coin-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M5.2 6.4c.15-.15.35-.24.56-.24h14.02c.5 0 .75.6.4.95l-3.1 3.1a.8.8 0 0 1-.57.24H4.5c-.5 0-.75-.6-.4-.95l1.1-1.1zM4.44 13.5c.15-.15.35-.24.56-.24h14.02c.5 0 .75.6.4.95l-3.1 3.1a.8.8 0 0 1-.57.24H1.73c-.5 0-.75-.6-.4-.95l3.1-3.1z"/></svg>
+              </span>
+              <span class="coin-name">Solana</span>
+              <span class="coin-tick">SOL</span>
+            </button>
+            <button class="coin-card" data-coin="eth">
+              <span class="coin-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11.6 1.5 4.9 12.2l6.7 3.9 6.7-3.9L11.6 1.5zM4.9 13.6l6.7 9 6.7-9-6.7 3.9-6.7-3.9z"/></svg>
+              </span>
+              <span class="coin-name">Ethereum</span>
+              <span class="coin-tick">ETH</span>
+            </button>
+            <button class="coin-card" data-coin="btc">
+              <span class="coin-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M14.6 10.6c1-.5 1.6-1.4 1.4-2.8-.2-1.7-1.6-2.3-3.5-2.5V2.7h-1.7v2.5h-1.4V2.7H7.7v2.5H4.5v1.8h1.3c.6 0 .8.2.8.6v6.9c0 .4-.2.7-.7.7H4.5l-.3 2h3.2v2.5h1.7V17h1.4v2.5h1.7V17c2.9-.2 4.8-1 5-3.7.2-1.9-.7-3-2.6-3.5v.8zm-5.2-3.4h2c1 0 1.9.3 1.9 1.4 0 1.1-.9 1.4-2 1.4H9.4V7.2zm2.3 8H9.4v-3.1h2.3c1.2 0 2.1.4 2.1 1.6 0 1.2-1 1.5-2.1 1.5z"/></svg>
+              </span>
+              <span class="coin-name">Bitcoin</span>
+              <span class="coin-tick">BTC</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="dep-step" id="quote-step" hidden>
+          <span class="step-label">3 · Send exactly this</span>
+          <div class="quote-box">
+            <div class="quote-row">
+              <span class="quote-label">You deposit</span>
+              <span class="quote-usd" id="quote-usd">$0.00</span>
+            </div>
+            <div class="quote-row quote-main">
+              <span class="quote-label">You send (<span id="quote-tick">—</span>)</span>
+              <span class="quote-coin mono" id="quote-coin">—</span>
+            </div>
+            <div class="quote-row">
+              <span class="quote-label">Live rate</span>
+              <span class="quote-rate mono" id="quote-rate">—</span>
+            </div>
+          </div>
+
+          <div class="pay-grid">
+            <div class="pay-left">
+              <span class="pay-label">Send to this address</span>
+              <div class="addr-box">
+                <code class="mono" id="pay-address">—</code>
+                <button class="copy-btn" id="copy-addr" type="button">Copy</button>
+              </div>
+              <ul class="pay-rules">
+                <li>Send <b>only <span id="rule-coin">SOL</span></b> to this address.</li>
+                <li>Send the <b>exact amount</b> shown — network fees come out of your wallet.</li>
+                <li>Press the button below after your wallet shows the transfer as sent.</li>
+              </ul>
+              <button class="btn btn-solid btn-wide" id="confirm-sent">I've sent the payment</button>
+              <p class="form-error" id="dep-error" hidden></p>
+            </div>
+            <div class="pay-right">
+              <img id="qr-img" alt="Payment QR code" hidden />
+              <span class="qr-fallback" id="qr-fallback" hidden>QR unavailable — copy the address instead.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dep-panel dep-status-panel" id="dep-status-panel" hidden>
+        <p class="eyebrow">Deposit logged</p>
+        <h2 class="dep-title small">Waiting on chain confirmation</h2>
+        <div class="status-box">
+          <div class="status-row">
+            <span class="quote-label">Amount</span>
+            <span class="quote-usd" id="final-usd">$0.00</span>
+          </div>
+          <div class="status-row">
+            <span class="quote-label">Coin</span>
+            <span class="mono" id="final-coin-amount">—</span>
+          </div>
+          <div class="status-row">
+            <span class="quote-label">Status</span>
+            <span class="status-badge" id="final-status">NOT FULFILLED</span>
+          </div>
+        </div>
+        <p class="dep-note">Your deposit is recorded and waiting for verification. If your balance doesn't update to your personal wallet on the site once it clears, DM the owner and/or staff in the Telegram group and they'll credit it manually.</p>
+        <div class="dep-actions">
+          <a class="btn btn-ghost" href="/">Back to store</a>
+          <button class="btn btn-solid" id="another-deposit">Make another deposit</button>
+        </div>
+      </section>
+
+      <aside class="dep-side">
+        <div class="side-card">
+          <span class="side-kicker">Your balance</span>
+          <span class="side-balance mono" id="side-balance">$0.00</span>
+          <span class="side-sub">Spends on any log in the catalog.</span>
+        </div>
+        <div class="side-card">
+          <span class="side-kicker">Deposits from this browser</span>
+          <ul class="dep-history" id="dep-history">
+            <li class="dep-empty">No deposits yet.</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <span class="side-kicker">Need help?</span>
+          <p class="side-text">If your deposit isn't credited to your on-site balance, DM the owner or staff in the Telegram group.</p>
+          <a class="side-link" href="https://t.me/+UmssZVxOYHs0ZjZh" target="_blank" rel="noopener">Open the Telegram group →</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-word">TIGERÈS<b>LOGS</b></span>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#logs">Catalog</a>
+      <a href="/linkables">Linkables</a>
+      <a href="/deposit">Deposit</a>
+      <a href="https://t.me/+UmssZVxOYHs0ZjZh" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="foot-legal">© <span id="year">2026</span> Tigerès Logs · Independent reseller — not affiliated with the platforms listed.</p>
+  </footer>
+
+  <script src="deposit.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linkables — Tigerès Logs</title>
+  <meta name="description" content="Linkables with real balances — CashApp, PayPal, Apple Wallet and more. Priced by balance tier, delivered fast." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F07A28'/%3E%3Cpath d='M0 18h64M0 32h64M0 46h64' stroke='%23181410' stroke-width='7'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Sora:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="linkables.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-head">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-word">TIGERÈS<b>LOGS</b></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#logs">Catalog</a>
+      <a href="/linkables" class="is-current">Linkables</a>
+      <a href="/deposit">Deposit</a>
+    </nav>
+    <div class="head-right">
+      <a class="balance-chip" href="/deposit" title="Your balance — top up to spend">
+        <span class="chip-dot" aria-hidden="true"></span>
+        <span id="balance-amount">$0</span>
+      </a>
+      <a class="btn btn-solid head-cta" href="/deposit">Deposit</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="link-hero">
+      <div class="section-head reveal">
+        <p class="eyebrow">Balances ready to link</p>
+        <h2 class="mega">LINKABLES</h2>
+        <p class="section-sub">Payment-app balances ready to attach to your own wallet or spend directly. Price is set by the balance tier — pick a platform below to filter the shelf.</p>
+      </div>
+
+      <div class="tier-banner reveal" aria-label="Pricing by balance tier">
+        <div class="tier-chip"><span class="tier-range">$150 – $269</span><span class="tier-price">$5</span></div>
+        <div class="tier-chip"><span class="tier-range">$270 – $450</span><span class="tier-price">$10</span></div>
+        <div class="tier-chip"><span class="tier-range">$451 – $599</span><span class="tier-price">$15</span></div>
+        <div class="tier-chip tier-hot"><span class="tier-range">$600 +</span><span class="tier-price">$20</span></div>
+      </div>
+
+      <div class="picker-row reveal">
+        <label class="picker-label" for="platform-select">Pick a platform</label>
+        <div class="picker-wrap">
+          <select id="platform-select" aria-label="Filter linkables by platform">
+            <option value="all" selected>All linkables — 30 on the shelf</option>
+            <option value="cashapp">CashApp</option>
+            <option value="paypal">PayPal</option>
+            <option value="applewallet">Apple Wallet</option>
+            <option value="venmo">Venmo</option>
+            <option value="zelle">Zelle</option>
+            <option value="chime">Chime</option>
+            <option value="googlepay">Google Pay</option>
+            <option value="samsungwallet">Samsung Wallet</option>
+            <option value="revolut">Revolut</option>
+            <option value="skrill">Skrill</option>
+          </select>
+          <span class="picker-caret" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="link-grid" id="link-grid">
+        <article class="tile link reveal" data-platform="cashapp"><span class="mono-badge">CA</span><div class="tile-body"><strong>CashApp</strong><em class="cat-tag">Linkable · $173 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="paypal"><span class="mono-badge">PP</span><div class="tile-body"><strong>PayPal</strong><em class="cat-tag">Linkable · $247 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="applewallet"><span class="mono-badge">AW</span><div class="tile-body"><strong>Apple Wallet</strong><em class="cat-tag">Linkable · $346 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="venmo"><span class="mono-badge">VN</span><div class="tile-body"><strong>Venmo</strong><em class="cat-tag">Linkable · $432 balance</em><span class="price">$10</span></div><span class="stock low">Low stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="zelle"><span class="mono-badge">ZL</span><div class="tile-body"><strong>Zelle</strong><em class="cat-tag">Linkable · $680 balance</em><span class="price">$20</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="chime"><span class="mono-badge">CH</span><div class="tile-body"><strong>Chime</strong><em class="cat-tag">Linkable · $731 balance</em><span class="price">$20</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="cashapp"><span class="mono-badge">CA</span><div class="tile-body"><strong>CashApp</strong><em class="cat-tag">Linkable · $189 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="paypal"><span class="mono-badge">PP</span><div class="tile-body"><strong>PayPal</strong><em class="cat-tag">Linkable · $264 balance</em><span class="price">$5</span></div><span class="stock low">Low stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="applewallet"><span class="mono-badge">AW</span><div class="tile-body"><strong>Apple Wallet</strong><em class="cat-tag">Linkable · $272 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="venmo"><span class="mono-badge">VN</span><div class="tile-body"><strong>Venmo</strong><em class="cat-tag">Linkable · $315 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="zelle"><span class="mono-badge">ZL</span><div class="tile-body"><strong>Zelle</strong><em class="cat-tag">Linkable · $498 balance</em><span class="price">$15</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="chime"><span class="mono-badge">CH</span><div class="tile-body"><strong>Chime</strong><em class="cat-tag">Linkable · $556 balance</em><span class="price">$15</span></div><span class="stock restock">Restocking</span><span class="btn btn-ghost tile-order is-disabled">Restocking</span></article>
+        <article class="tile link reveal" data-platform="googlepay"><span class="mono-badge">GP</span><div class="tile-body"><strong>Google Pay</strong><em class="cat-tag">Linkable · $162 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="googlepay"><span class="mono-badge">GP</span><div class="tile-body"><strong>Google Pay</strong><em class="cat-tag">Linkable · $238 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="samsungwallet"><span class="mono-badge">SW</span><div class="tile-body"><strong>Samsung Wallet</strong><em class="cat-tag">Linkable · $291 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="samsungwallet"><span class="mono-badge">SW</span><div class="tile-body"><strong>Samsung Wallet</strong><em class="cat-tag">Linkable · $387 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="revolut"><span class="mono-badge">RV</span><div class="tile-body"><strong>Revolut</strong><em class="cat-tag">Linkable · $467 balance</em><span class="price">$15</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="revolut"><span class="mono-badge">RV</span><div class="tile-body"><strong>Revolut</strong><em class="cat-tag">Linkable · $612 balance</em><span class="price">$20</span></div><span class="stock low">Low stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="skrill"><span class="mono-badge">SK</span><div class="tile-body"><strong>Skrill</strong><em class="cat-tag">Linkable · $175 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="skrill"><span class="mono-badge">SK</span><div class="tile-body"><strong>Skrill</strong><em class="cat-tag">Linkable · $449 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="cashapp"><span class="mono-badge">CA</span><div class="tile-body"><strong>CashApp</strong><em class="cat-tag">Linkable · $523 balance</em><span class="price">$15</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="paypal"><span class="mono-badge">PP</span><div class="tile-body"><strong>PayPal</strong><em class="cat-tag">Linkable · $647 balance</em><span class="price">$20</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="applewallet"><span class="mono-badge">AW</span><div class="tile-body"><strong>Apple Wallet</strong><em class="cat-tag">Linkable · $704 balance</em><span class="price">$20</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="venmo"><span class="mono-badge">VN</span><div class="tile-body"><strong>Venmo</strong><em class="cat-tag">Linkable · $214 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="zelle"><span class="mono-badge">ZL</span><div class="tile-body"><strong>Zelle</strong><em class="cat-tag">Linkable · $359 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="chime"><span class="mono-badge">CH</span><div class="tile-body"><strong>Chime</strong><em class="cat-tag">Linkable · $458 balance</em><span class="price">$15</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="googlepay"><span class="mono-badge">GP</span><div class="tile-body"><strong>Google Pay</strong><em class="cat-tag">Linkable · $588 balance</em><span class="price">$15</span></div><span class="stock low">Low stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="samsungwallet"><span class="mono-badge">SW</span><div class="tile-body"><strong>Samsung Wallet</strong><em class="cat-tag">Linkable · $638 balance</em><span class="price">$20</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="revolut"><span class="mono-badge">RV</span><div class="tile-body"><strong>Revolut</strong><em class="cat-tag">Linkable · $221 balance</em><span class="price">$5</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+        <article class="tile link reveal" data-platform="skrill"><span class="mono-badge">SK</span><div class="tile-body"><strong>Skrill</strong><em class="cat-tag">Linkable · $364 balance</em><span class="price">$10</span></div><span class="stock in">In stock</span><a class="btn btn-ghost tile-order" href="/deposit">Order</a></article>
+      </div>
+
+      <p class="empty-note" id="link-empty" hidden>Nothing on that platform right now — restocks land weekly.</p>
+    </section>
+
+    <section class="buy" id="buy">
+      <div class="buy-grid">
+        <div class="buy-copy reveal">
+          <p class="eyebrow">Balance</p>
+          <h2>Buy linkables with balance</h2>
+          <p class="buy-sub">
+            Top up once, grab any linkable on the shelf. Deposits are made in
+            <b>SOL</b>, <b>ETH</b> or <b>BTC</b> at live rates, and every deposit sits in
+            <em>not fulfilled</em> status until the payment clears — then your balance is credited.
+          </p>
+          <div class="buy-actions">
+            <a class="btn btn-solid" href="/deposit">Deposit now</a>
+            <a class="btn btn-ghost" href="https://t.me/+UmssZVxOYHs0ZjZh" target="_blank" rel="noopener">Telegram group</a>
+          </div>
+        </div>
+        <div class="buy-visual reveal" aria-hidden="true">
+          <div class="buy-mock">
+            <span class="mock-kicker">Your balance</span>
+            <span class="mock-balance mono">$0</span>
+            <span class="mock-pill">DEPOSIT · SOL · ETH · BTC</span>
+            <span class="mock-status">STATUS: NOT FULFILLED → FULFILLED</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="foot-brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-word">TIGERÈS<b>LOGS</b></span>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/#logs">Catalog</a>
+      <a href="/linkables">Linkables</a>
+      <a href="/deposit">Deposit</a>
+      <a href="https://t.me/+UmssZVxOYHs0ZjZh" target="_blank" rel="noopener">Telegram</a>
+    </nav>
+    <p class="foot-legal">© <span id="year">2026</span> Tigerès Logs · Independent reseller — not affiliated with the platforms listed.</p>
+  </footer>
+
+  <script src="linkables.js"></script>
+</body>
+</html>
